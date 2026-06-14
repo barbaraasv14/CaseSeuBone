@@ -123,8 +123,6 @@ interface Task {
 
 ## Sugestao de commits incrementais
 
-Caso voce va publicar em um repositorio Git, uma historia limpa de commits seria:
-
 ```text
 feat: estruturar app estatico com layout principal
 feat: adicionar modelo de dados e seed do time
