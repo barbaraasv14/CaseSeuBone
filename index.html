@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Radar de Atividades | Quatro5</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div>
+          <p class="eyebrow">Quatro5</p>
+          <h1>Radar de Atividades</h1>
+          <p class="sidebar-copy">
+            Kanban com indicadores para o Ricardo enxergar prazos, carga do time
+            e ritmo de entrega sem depender de planilhas soltas.
+          </p>
+        </div>
+
+        <nav class="nav-list" aria-label="Resumo da ferramenta">
+          <a href="#indicadores">Indicadores</a>
+          <a href="#kanban">Kanban</a>
+          <a href="#nova-atividade">Nova atividade</a>
+          <a href="#equipe">Equipe</a>
+        </nav>
+
+        <button class="ghost-button" id="resetDataButton" type="button">
+          Restaurar dados exemplo
+        </button>
+      </aside>
+
+      <main class="workspace">
+        <section class="topbar" aria-label="Filtros">
+          <div>
+            <p class="eyebrow">Operacao da semana</p>
+            <h2>Visao geral do time</h2>
+          </div>
+
+          <div class="filters">
+            <label>
+              Buscar
+              <input id="searchInput" type="search" placeholder="Cliente, tarefa ou descricao" />
+            </label>
+            <label>
+              Responsavel
+              <select id="assigneeFilter"></select>
+            </label>
+            <label>
+              Prioridade
+              <select id="priorityFilter">
+                <option value="ALL">Todas</option>
+                <option value="HIGH">Alta</option>
+                <option value="MEDIUM">Media</option>
+                <option value="LOW">Baixa</option>
+              </select>
+            </label>
+          </div>
+        </section>
+
+        <section class="alert-panel" id="warningPanel" aria-live="polite"></section>
+
+        <section class="kpi-grid" id="indicadores" aria-label="Indicadores principais"></section>
+
+        <section class="content-grid">
+          <div class="kanban-section" id="kanban">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Fluxo Kanban</p>
+                <h2>Trabalho em andamento</h2>
+              </div>
+              <p id="taskCounter" class="muted"></p>
+            </div>
+            <div class="kanban-board" id="kanbanBoard"></div>
+          </div>
+
+          <aside class="side-panel">
+            <section class="form-panel" id="nova-atividade">
+              <div class="section-heading compact">
+                <div>
+                  <p class="eyebrow">Registro rapido</p>
+                  <h2>Nova atividade</h2>
+                </div>
+              </div>
+
+              <form id="taskForm">
+                <label>
+                  Titulo
+                  <input id="titleInput" name="title" required maxlength="80" />
+                </label>
+                <label>
+                  Descricao
+                  <textarea id="descriptionInput" name="description" rows="3"></textarea>
+                </label>
+                <label>
+                  Responsavel
+                  <select id="assigneeInput" name="assigneeId" required></select>
+                </label>
+                <div class="form-row">
+                  <label>
+                    Prioridade
+                    <select id="priorityInput" name="priority" required>
+                      <option value="MEDIUM">Media</option>
+                      <option value="HIGH">Alta</option>
+                      <option value="LOW">Baixa</option>
+                    </select>
+                  </label>
+                  <label>
+                    Status
+                    <select id="statusInput" name="status" required></select>
+                  </label>
+                </div>
+                <label>
+                  Prazo
+                  <input id="dueDateInput" name="dueDate" type="date" required />
+                </label>
+                <button class="primary-button" type="submit">Adicionar atividade</button>
+              </form>
+            </section>
+
+            <section class="team-panel" id="equipe">
+              <div class="section-heading compact">
+                <div>
+                  <p class="eyebrow">Capacidade</p>
+                  <h2>Carga por colaborador</h2>
+                </div>
+              </div>
+              <div id="workloadList" class="workload-list"></div>
+            </section>
+          </aside>
+        </section>
+      </main>
+    </div>
+
+    <template id="taskTemplate">
+      <article class="task-card">
+        <div class="task-card-header">
+          <span class="priority-pill"></span>
+          <span class="due-pill"></span>
+        </div>
+        <h3></h3>
+        <p class="task-description"></p>
+        <div class="task-meta">
+          <span class="assignee-name"></span>
+          <span class="task-age"></span>
+        </div>
+        <div class="task-actions">
+          <select class="status-select" aria-label="Alterar status"></select>
+          <button class="delete-button" type="button" aria-label="Excluir atividade">Excluir</button>
+        </div>
+      </article>
+    </template>
+
+    <script defer src="./src/main.js"></script>
+  </body>
+</html>

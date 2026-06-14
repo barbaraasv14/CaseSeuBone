@@ -1,0 +1,17 @@
+{
+  "name": "radar-atividades-quatro5",
+  "version": "1.0.0",
+  "description": "Ferramenta em TypeScript para acompanhar atividades, prazos e indicadores de um time de PME.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs"
+  },
+  "keywords": [
+    "typescript",
+    "kanban",
+    "gestao",
+    "kpi"
+  ],
+  "author": "",
+  "license": "MIT"
+}
