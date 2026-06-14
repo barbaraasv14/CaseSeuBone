@@ -19,7 +19,7 @@ npm start
 Depois acesse:
 
 ```text
-[http://localhost:4173](https://barbaraasv14.github.io/CaseSeuBone/)
+https://barbaraasv14.github.io/CaseSeuBone/
 ```
 
 Nao ha dependencias externas. O navegador usa `src/main.js`, gerado a partir da versao em TypeScript `src/main.ts`.
