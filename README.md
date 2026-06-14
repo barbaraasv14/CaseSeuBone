@@ -1,6 +1,6 @@
 # Radar de Atividades
 
-Ferramenta em TypeScript para resolver o desafio de gestao de atividades da Quatro5. A proposta e dar ao Ricardo uma visao unica do trabalho do time: quem faz o que, o que esta atrasado, o que vence em breve, como esta a carga de cada pessoa e qual foi o ritmo real de entrega da semana.
+Ferramenta em TypeScript para resolver o desafio de gestao de atividades da Quatro5. A proposta é dar ao Ricardo uma visao unica do trabalho do time: quem faz o que, o que esta atrasado, o que vence em breve, como esta a carga de cada pessoa e qual foi o ritmo real de entrega da semana.
 
 ## Como rodar
 
